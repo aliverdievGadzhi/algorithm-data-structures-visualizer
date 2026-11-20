@@ -1,4 +1,4 @@
-package Trees;
+package trees;
 
 /**
  * An enum representing the color of a node in a red-black tree.

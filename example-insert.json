@@ -1,2080 +1,367 @@
 {
   "structure" : "avl",
   "operation" : "insert",
-  "value" : 10,
+  "value" : 65,
   "steps" : [ {
     "index" : 0,
-    "action" : "insert",
-    "at" : 1,
-    "comment" : "Создан корень дерева со значением 1",
-    "tree" : {
-      "value" : 1,
-      "height" : 0,
-      "balance" : 0,
-      "left" : null,
-      "right" : null
+    "action" : "compare",
+    "at" : 0,
+    "comment" : "65 > 50, go right",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "height" : 2,
+      "balance" : -1,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "height" : 0,
+        "balance" : 0,
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "height" : 1,
+        "balance" : 0,
+        "left" : {
+          "id" : 3,
+          "value" : 60,
+          "height" : 0,
+          "balance" : 0,
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "height" : 0,
+          "balance" : 0,
+          "left" : null,
+          "right" : null
+        }
+      }
     }
   }, {
     "index" : 1,
-    "action" : "done",
-    "at" : 1,
-    "comment" : "Вставка 1 успешно завершена",
-    "tree" : {
-      "value" : 1,
-      "height" : 0,
-      "balance" : 0,
-      "left" : null,
-      "right" : null
+    "action" : "compare",
+    "at" : 2,
+    "comment" : "65 < 70, go left",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "height" : 2,
+      "balance" : -1,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "height" : 0,
+        "balance" : 0,
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "height" : 1,
+        "balance" : 0,
+        "left" : {
+          "id" : 3,
+          "value" : 60,
+          "height" : 0,
+          "balance" : 0,
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "height" : 0,
+          "balance" : 0,
+          "left" : null,
+          "right" : null
+        }
+      }
     }
   }, {
     "index" : 2,
     "action" : "compare",
-    "at" : 1,
-    "comment" : "2 больше 1 — идём вправо",
-    "tree" : {
-      "value" : 1,
-      "height" : 0,
-      "balance" : 0,
-      "left" : null,
-      "right" : null
+    "at" : 3,
+    "comment" : "65 > 60, go right",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "height" : 2,
+      "balance" : -1,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "height" : 0,
+        "balance" : 0,
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "height" : 1,
+        "balance" : 0,
+        "left" : {
+          "id" : 3,
+          "value" : 60,
+          "height" : 0,
+          "balance" : 0,
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "height" : 0,
+          "balance" : 0,
+          "left" : null,
+          "right" : null
+        }
+      }
     }
   }, {
     "index" : 3,
     "action" : "insert",
-    "at" : 2,
-    "comment" : "Вставлен узел 2 справа от 1",
-    "tree" : {
-      "value" : 1,
-      "height" : 0,
-      "balance" : -1,
-      "left" : null,
-      "right" : {
-        "value" : 2,
+    "at" : 5,
+    "comment" : "Insert 65 as the right child of 60",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "height" : 3,
+      "balance" : -2,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
         "height" : 0,
         "balance" : 0,
         "left" : null,
         "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "height" : 2,
+        "balance" : 1,
+        "left" : {
+          "id" : 3,
+          "value" : 60,
+          "height" : 1,
+          "balance" : -1,
+          "left" : null,
+          "right" : {
+            "id" : 5,
+            "value" : 65,
+            "height" : 0,
+            "balance" : 0,
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "height" : 0,
+          "balance" : 0,
+          "left" : null,
+          "right" : null
+        }
       }
     }
   }, {
     "index" : 4,
-    "action" : "done",
-    "at" : 2,
-    "comment" : "Вставка 2 успешно завершена",
-    "tree" : {
-      "value" : 1,
-      "height" : 1,
-      "balance" : -1,
-      "left" : null,
-      "right" : {
-        "value" : 2,
+    "action" : "unbalanced",
+    "at" : 0,
+    "comment" : "Balance of 50 is -2: right-left case, rotate right around the right child, then left",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "height" : 3,
+      "balance" : -2,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
         "height" : 0,
         "balance" : 0,
         "left" : null,
         "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "height" : 2,
+        "balance" : 1,
+        "left" : {
+          "id" : 3,
+          "value" : 60,
+          "height" : 1,
+          "balance" : -1,
+          "left" : null,
+          "right" : {
+            "id" : 5,
+            "value" : 65,
+            "height" : 0,
+            "balance" : 0,
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "height" : 0,
+          "balance" : 0,
+          "left" : null,
+          "right" : null
+        }
       }
     }
   }, {
     "index" : 5,
-    "action" : "compare",
-    "at" : 1,
-    "comment" : "3 больше 1 — идём вправо",
-    "tree" : {
-      "value" : 1,
-      "height" : 1,
-      "balance" : -1,
-      "left" : null,
-      "right" : {
-        "value" : 2,
+    "action" : "rotate_right",
+    "at" : 2,
+    "comment" : "Rotate right around 70, 60 moves up",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "height" : 3,
+      "balance" : -2,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
         "height" : 0,
         "balance" : 0,
         "left" : null,
         "right" : null
+      },
+      "right" : {
+        "id" : 3,
+        "value" : 60,
+        "height" : 2,
+        "balance" : -2,
+        "left" : null,
+        "right" : {
+          "id" : 2,
+          "value" : 70,
+          "height" : 1,
+          "balance" : 0,
+          "left" : {
+            "id" : 5,
+            "value" : 65,
+            "height" : 0,
+            "balance" : 0,
+            "left" : null,
+            "right" : null
+          },
+          "right" : {
+            "id" : 4,
+            "value" : 80,
+            "height" : 0,
+            "balance" : 0,
+            "left" : null,
+            "right" : null
+          }
+        }
       }
     }
   }, {
     "index" : 6,
-    "action" : "compare",
-    "at" : 2,
-    "comment" : "3 больше 2 — идём вправо",
-    "tree" : {
-      "value" : 1,
-      "height" : 1,
-      "balance" : -1,
-      "left" : null,
-      "right" : {
-        "value" : 2,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
+    "action" : "rotate_left",
+    "at" : 0,
+    "comment" : "Rotate left around 50, 60 moves up",
+    "state" : {
+      "id" : 3,
+      "value" : 60,
+      "height" : 2,
+      "balance" : 0,
+      "left" : {
+        "id" : 0,
+        "value" : 50,
+        "height" : 1,
+        "balance" : 1,
+        "left" : {
+          "id" : 1,
+          "value" : 30,
+          "height" : 0,
+          "balance" : 0,
+          "left" : null,
+          "right" : null
+        },
         "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "height" : 1,
+        "balance" : 0,
+        "left" : {
+          "id" : 5,
+          "value" : 65,
+          "height" : 0,
+          "balance" : 0,
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "height" : 0,
+          "balance" : 0,
+          "left" : null,
+          "right" : null
+        }
       }
     }
   }, {
     "index" : 7,
-    "action" : "insert",
-    "at" : 3,
-    "comment" : "Вставлен узел 3 справа от 2",
-    "tree" : {
-      "value" : 1,
-      "height" : 1,
-      "balance" : -1,
-      "left" : null,
-      "right" : {
-        "value" : 2,
-        "height" : 0,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 8,
-    "action" : "rotate_left",
-    "at" : 1,
-    "comment" : "Баланс -2, левый поворот вокруг 1",
-    "tree" : {
-      "value" : 2,
-      "height" : 1,
-      "balance" : 0,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 3,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      }
-    }
-  }, {
-    "index" : 9,
     "action" : "done",
-    "at" : 3,
-    "comment" : "Вставка 3 успешно завершена",
-    "tree" : {
-      "value" : 2,
-      "height" : 1,
-      "balance" : 0,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 3,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      }
-    }
-  }, {
-    "index" : 10,
-    "action" : "compare",
-    "at" : 2,
-    "comment" : "4 больше 2 — идём вправо",
-    "tree" : {
-      "value" : 2,
-      "height" : 1,
-      "balance" : 0,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 3,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      }
-    }
-  }, {
-    "index" : 11,
-    "action" : "compare",
-    "at" : 3,
-    "comment" : "4 больше 3 — идём вправо",
-    "tree" : {
-      "value" : 2,
-      "height" : 1,
-      "balance" : 0,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 3,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      }
-    }
-  }, {
-    "index" : 12,
-    "action" : "insert",
-    "at" : 4,
-    "comment" : "Вставлен узел 4 справа от 3",
-    "tree" : {
-      "value" : 2,
-      "height" : 1,
-      "balance" : 0,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 3,
-        "height" : 0,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 4,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 13,
-    "action" : "done",
-    "at" : 4,
-    "comment" : "Вставка 4 успешно завершена",
-    "tree" : {
-      "value" : 2,
-      "height" : 2,
-      "balance" : -1,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 3,
-        "height" : 1,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 4,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 14,
-    "action" : "compare",
-    "at" : 2,
-    "comment" : "5 больше 2 — идём вправо",
-    "tree" : {
-      "value" : 2,
-      "height" : 2,
-      "balance" : -1,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 3,
-        "height" : 1,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 4,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 15,
-    "action" : "compare",
-    "at" : 3,
-    "comment" : "5 больше 3 — идём вправо",
-    "tree" : {
-      "value" : 2,
-      "height" : 2,
-      "balance" : -1,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 3,
-        "height" : 1,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 4,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 16,
-    "action" : "compare",
-    "at" : 4,
-    "comment" : "5 больше 4 — идём вправо",
-    "tree" : {
-      "value" : 2,
-      "height" : 2,
-      "balance" : -1,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 3,
-        "height" : 1,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 4,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 17,
-    "action" : "insert",
-    "at" : 5,
-    "comment" : "Вставлен узел 5 справа от 4",
-    "tree" : {
-      "value" : 2,
-      "height" : 2,
-      "balance" : -1,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 3,
-        "height" : 1,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 4,
-          "height" : 0,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 5,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 18,
-    "action" : "rotate_left",
-    "at" : 3,
-    "comment" : "Баланс -2, левый поворот вокруг 3",
-    "tree" : {
-      "value" : 2,
-      "height" : 2,
-      "balance" : -1,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 4,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 19,
-    "action" : "done",
-    "at" : 5,
-    "comment" : "Вставка 5 успешно завершена",
-    "tree" : {
-      "value" : 2,
-      "height" : 2,
-      "balance" : -1,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 4,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 20,
-    "action" : "compare",
-    "at" : 2,
-    "comment" : "6 больше 2 — идём вправо",
-    "tree" : {
-      "value" : 2,
-      "height" : 2,
-      "balance" : -1,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 4,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 21,
-    "action" : "compare",
-    "at" : 4,
-    "comment" : "6 больше 4 — идём вправо",
-    "tree" : {
-      "value" : 2,
-      "height" : 2,
-      "balance" : -1,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 4,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 22,
-    "action" : "compare",
-    "at" : 5,
-    "comment" : "6 больше 5 — идём вправо",
-    "tree" : {
-      "value" : 2,
-      "height" : 2,
-      "balance" : -1,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 4,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 23,
-    "action" : "insert",
-    "at" : 6,
-    "comment" : "Вставлен узел 6 справа от 5",
-    "tree" : {
-      "value" : 2,
-      "height" : 2,
-      "balance" : -1,
-      "left" : {
-        "value" : 1,
-        "height" : 0,
-        "balance" : 0,
-        "left" : null,
-        "right" : null
-      },
-      "right" : {
-        "value" : 4,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 6,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 24,
-    "action" : "rotate_left",
-    "at" : 2,
-    "comment" : "Баланс -2, левый поворот вокруг 2",
-    "tree" : {
-      "value" : 4,
+    "at" : null,
+    "comment" : "Insert 65 finished",
+    "state" : {
+      "id" : 3,
+      "value" : 60,
       "height" : 2,
       "balance" : 0,
       "left" : {
-        "value" : 2,
+        "id" : 0,
+        "value" : 50,
         "height" : 1,
-        "balance" : 0,
+        "balance" : 1,
         "left" : {
-          "value" : 1,
+          "id" : 1,
+          "value" : 30,
           "height" : 0,
           "balance" : 0,
           "left" : null,
           "right" : null
         },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
+        "right" : null
       },
       "right" : {
-        "value" : 5,
-        "height" : 1,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 6,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 25,
-    "action" : "done",
-    "at" : 6,
-    "comment" : "Вставка 6 успешно завершена",
-    "tree" : {
-      "value" : 4,
-      "height" : 2,
-      "balance" : 0,
-      "left" : {
-        "value" : 2,
+        "id" : 2,
+        "value" : 70,
         "height" : 1,
         "balance" : 0,
         "left" : {
-          "value" : 1,
+          "id" : 5,
+          "value" : 65,
           "height" : 0,
           "balance" : 0,
           "left" : null,
           "right" : null
         },
         "right" : {
-          "value" : 3,
+          "id" : 4,
+          "value" : 80,
           "height" : 0,
           "balance" : 0,
           "left" : null,
           "right" : null
-        }
-      },
-      "right" : {
-        "value" : 5,
-        "height" : 1,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 6,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 26,
-    "action" : "compare",
-    "at" : 4,
-    "comment" : "7 больше 4 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 2,
-      "balance" : 0,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 5,
-        "height" : 1,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 6,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 27,
-    "action" : "compare",
-    "at" : 5,
-    "comment" : "7 больше 5 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 2,
-      "balance" : 0,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 5,
-        "height" : 1,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 6,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 28,
-    "action" : "compare",
-    "at" : 6,
-    "comment" : "7 больше 6 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 2,
-      "balance" : 0,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 5,
-        "height" : 1,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 6,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 29,
-    "action" : "insert",
-    "at" : 7,
-    "comment" : "Вставлен узел 7 справа от 6",
-    "tree" : {
-      "value" : 4,
-      "height" : 2,
-      "balance" : 0,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 5,
-        "height" : 1,
-        "balance" : -1,
-        "left" : null,
-        "right" : {
-          "value" : 6,
-          "height" : 0,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 7,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 30,
-    "action" : "rotate_left",
-    "at" : 5,
-    "comment" : "Баланс -2, левый поворот вокруг 5",
-    "tree" : {
-      "value" : 4,
-      "height" : 2,
-      "balance" : 0,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 31,
-    "action" : "done",
-    "at" : 7,
-    "comment" : "Вставка 7 успешно завершена",
-    "tree" : {
-      "value" : 4,
-      "height" : 2,
-      "balance" : 0,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 32,
-    "action" : "compare",
-    "at" : 4,
-    "comment" : "8 больше 4 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 2,
-      "balance" : 0,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 33,
-    "action" : "compare",
-    "at" : 6,
-    "comment" : "8 больше 6 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 2,
-      "balance" : 0,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 34,
-    "action" : "compare",
-    "at" : 7,
-    "comment" : "8 больше 7 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 2,
-      "balance" : 0,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      }
-    }
-  }, {
-    "index" : 35,
-    "action" : "insert",
-    "at" : 8,
-    "comment" : "Вставлен узел 8 справа от 7",
-    "tree" : {
-      "value" : 4,
-      "height" : 2,
-      "balance" : 0,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 0,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 8,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 36,
-    "action" : "done",
-    "at" : 8,
-    "comment" : "Вставка 8 успешно завершена",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 1,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 8,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 37,
-    "action" : "compare",
-    "at" : 4,
-    "comment" : "9 больше 4 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 1,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 8,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 38,
-    "action" : "compare",
-    "at" : 6,
-    "comment" : "9 больше 6 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 1,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 8,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 39,
-    "action" : "compare",
-    "at" : 7,
-    "comment" : "9 больше 7 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 1,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 8,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 40,
-    "action" : "compare",
-    "at" : 8,
-    "comment" : "9 больше 8 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 1,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 8,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 41,
-    "action" : "insert",
-    "at" : 9,
-    "comment" : "Вставлен узел 9 справа от 8",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 7,
-          "height" : 1,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 8,
-            "height" : 0,
-            "balance" : -1,
-            "left" : null,
-            "right" : {
-              "value" : 9,
-              "height" : 0,
-              "balance" : 0,
-              "left" : null,
-              "right" : null
-            }
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 42,
-    "action" : "rotate_left",
-    "at" : 7,
-    "comment" : "Баланс -2, левый поворот вокруг 7",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 8,
-          "height" : 1,
-          "balance" : 0,
-          "left" : {
-            "value" : 7,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          },
-          "right" : {
-            "value" : 9,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 43,
-    "action" : "done",
-    "at" : 9,
-    "comment" : "Вставка 9 успешно завершена",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 8,
-          "height" : 1,
-          "balance" : 0,
-          "left" : {
-            "value" : 7,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          },
-          "right" : {
-            "value" : 9,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 44,
-    "action" : "compare",
-    "at" : 4,
-    "comment" : "10 больше 4 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 8,
-          "height" : 1,
-          "balance" : 0,
-          "left" : {
-            "value" : 7,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          },
-          "right" : {
-            "value" : 9,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 45,
-    "action" : "compare",
-    "at" : 6,
-    "comment" : "10 больше 6 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 8,
-          "height" : 1,
-          "balance" : 0,
-          "left" : {
-            "value" : 7,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          },
-          "right" : {
-            "value" : 9,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 46,
-    "action" : "compare",
-    "at" : 8,
-    "comment" : "10 больше 8 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 8,
-          "height" : 1,
-          "balance" : 0,
-          "left" : {
-            "value" : 7,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          },
-          "right" : {
-            "value" : 9,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 47,
-    "action" : "compare",
-    "at" : 9,
-    "comment" : "10 больше 9 — идём вправо",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 8,
-          "height" : 1,
-          "balance" : 0,
-          "left" : {
-            "value" : 7,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          },
-          "right" : {
-            "value" : 9,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 48,
-    "action" : "insert",
-    "at" : 10,
-    "comment" : "Вставлен узел 10 справа от 9",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 6,
-        "height" : 2,
-        "balance" : -1,
-        "left" : {
-          "value" : 5,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 8,
-          "height" : 1,
-          "balance" : 0,
-          "left" : {
-            "value" : 7,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          },
-          "right" : {
-            "value" : 9,
-            "height" : 0,
-            "balance" : -1,
-            "left" : null,
-            "right" : {
-              "value" : 10,
-              "height" : 0,
-              "balance" : 0,
-              "left" : null,
-              "right" : null
-            }
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 49,
-    "action" : "rotate_left",
-    "at" : 6,
-    "comment" : "Баланс -2, левый поворот вокруг 6",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 8,
-        "height" : 2,
-        "balance" : 0,
-        "left" : {
-          "value" : 6,
-          "height" : 1,
-          "balance" : 0,
-          "left" : {
-            "value" : 5,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          },
-          "right" : {
-            "value" : 7,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        },
-        "right" : {
-          "value" : 9,
-          "height" : 1,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 10,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        }
-      }
-    }
-  }, {
-    "index" : 50,
-    "action" : "done",
-    "at" : 10,
-    "comment" : "Вставка 10 успешно завершена",
-    "tree" : {
-      "value" : 4,
-      "height" : 3,
-      "balance" : -1,
-      "left" : {
-        "value" : 2,
-        "height" : 1,
-        "balance" : 0,
-        "left" : {
-          "value" : 1,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        },
-        "right" : {
-          "value" : 3,
-          "height" : 0,
-          "balance" : 0,
-          "left" : null,
-          "right" : null
-        }
-      },
-      "right" : {
-        "value" : 8,
-        "height" : 2,
-        "balance" : 0,
-        "left" : {
-          "value" : 6,
-          "height" : 1,
-          "balance" : 0,
-          "left" : {
-            "value" : 5,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          },
-          "right" : {
-            "value" : 7,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
-        },
-        "right" : {
-          "value" : 9,
-          "height" : 1,
-          "balance" : -1,
-          "left" : null,
-          "right" : {
-            "value" : 10,
-            "height" : 0,
-            "balance" : 0,
-            "left" : null,
-            "right" : null
-          }
         }
       }
     }
