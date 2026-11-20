@@ -11,6 +11,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,24 +21,24 @@ class TreeInvariantTest {
 
     @Test
     void bstStaysValidUnderRandomOperations() {
-        randomOperations(SimpleBinarySearchTree::new, root -> { });
+        randomOperations(SimpleBinarySearchTree<Integer>::new, (BSTNode<Integer> root) -> { });
     }
 
     @Test
     void avlStaysBalancedUnderRandomOperations() {
-        randomOperations(AVLTree::new, TreeInvariantTest::checkAvl);
+        randomOperations(AVLTree<Integer>::new, (AVLNode<Integer> root) -> checkAvl(root));
     }
 
     @Test
     void rbKeepsColorRulesUnderRandomOperations() {
-        randomOperations(RBTree::new, root -> {
+        randomOperations(RBTree<Integer>::new, (RBNode<Integer> root) -> {
             if (root != null) assertTrue(root.isBlack(), "root must be black");
             checkRb(root);
         });
     }
 
     private static <N extends AbstractBinaryNode<Integer, N>> void randomOperations(
-            java.util.function.Supplier<AbstractBinarySearchTree<Integer, N>> factory, Consumer<N> invariant) {
+            Supplier<? extends AbstractBinarySearchTree<Integer, N>> factory, Consumer<N> invariant) {
         Random random = new Random(42);
         for (int run = 0; run < 300; run++) {
             AbstractBinarySearchTree<Integer, N> tree = factory.get();
@@ -93,9 +94,9 @@ class TreeInvariantTest {
     void removeLastNodeLeavesEmptyTree() {
         for (AbstractBinarySearchTree<Integer, ?> tree : allTrees()) {
             tree.insert(5);
-            TreeOperationResponse response = tree.remove(5);
+            List<TreeStep> steps = tree.remove(5).steps();
             assertNull(tree.getRoot());
-            assertNull(response.steps().getLast().state());
+            assertNull(steps.getLast().state());
         }
     }
 
@@ -106,6 +107,7 @@ class TreeInvariantTest {
             tree.insert(1);
             tree.insert(3);
             assertTrue(actions(tree.remove(2)).contains("replace"));
+            assertNotNull(tree.getRoot());
             assertEquals(3, tree.getRoot().getKey());
             assertEquals(List.of(1, 3), tree.inOrder());
         }
@@ -139,21 +141,18 @@ class TreeInvariantTest {
         AVLTree<Integer> tree = new AVLTree<>();
         tree.insert(1);
         tree.insert(2);
-        TreeStep unbalanced = tree.insert(3).steps().stream()
-                .filter(s -> s.action().equals("unbalanced")).findFirst().orElseThrow();
-        assertEquals(-2, unbalanced.state().balance());
-        assertEquals(2, unbalanced.state().height());
+        TreeNodeDto state = stateOf(tree.insert(3), "unbalanced");
+        assertEquals(-2, state.balance());
+        assertEquals(2, state.height());
     }
 
     @Test
     void nodeIdsStayUniqueWhenKeyIsCopied() {
         AVLTree<Integer> tree = new AVLTree<>();
         for (int v : new int[]{2, 1, 3}) tree.insert(v);
-        TreeStep replace = tree.remove(2).steps().stream()
-                .filter(s -> s.action().equals("replace")).findFirst().orElseThrow();
         Set<Integer> ids = new HashSet<>();
-        List<Object> values = new ArrayList<>();
-        collect(replace.state(), ids, values);
+        List<Integer> values = new ArrayList<>();
+        collect(stateOf(tree.remove(2), "replace"), ids, values);
         assertEquals(3, ids.size());
         assertEquals(List.of(1, 3, 3), values.stream().sorted().toList());
     }
@@ -161,31 +160,38 @@ class TreeInvariantTest {
     @Test
     void jsonHasOnlyTheFieldsOfEachTree() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
-        AVLTree<Integer> avl = new AVLTree<>();
-        JsonNode avlState = mapper.readTree(avl.insert(1).toJson()).get("steps").get(0).get("state");
+        JsonNode avlState = mapper.readTree(new AVLTree<Integer>().insert(1).toJson()).path("steps").path(0).path("state");
         assertTrue(avlState.has("height") && avlState.has("balance") && !avlState.has("color"));
 
-        RBTree<Integer> rb = new RBTree<>();
-        JsonNode rbJson = mapper.readTree(rb.insert(1).toJson());
-        JsonNode rbState = rbJson.get("steps").get(0).get("state");
+        JsonNode rbJson = mapper.readTree(new RBTree<Integer>().insert(1).toJson());
+        JsonNode rbState = rbJson.path("steps").path(0).path("state");
         assertTrue(rbState.has("color") && !rbState.has("height"));
-        assertEquals("rb", rbJson.get("structure").asText());
+        assertEquals("rb", rbJson.path("structure").asText());
     }
 
     // ---------- helpers ----------
 
     private static List<AbstractBinarySearchTree<Integer, ?>> allTrees() {
-        return List.of(new SimpleBinarySearchTree<>(), new AVLTree<>(), new RBTree<>());
+        return List.of(new SimpleBinarySearchTree<Integer>(), new AVLTree<Integer>(), new RBTree<Integer>());
     }
 
     private static List<String> actions(TreeOperationResponse response) {
         return response.steps().stream().map(TreeStep::action).toList();
     }
 
-    private static List<String> rotations(int... values) {
+    /** Returns the snapshot of the first step with the given action; fails if there is none. */
+    private static TreeNodeDto stateOf(TreeOperationResponse response, String action) {
+        TreeStep step = response.steps().stream()
+                .filter(s -> s.action().equals(action)).findFirst().orElseThrow();
+        assertNotNull(step.state());
+        return step.state();
+    }
+
+    /** Inserts all values and returns the rotations done by the last insert. */
+    private static List<String> rotations(int first, int... rest) {
         AVLTree<Integer> tree = new AVLTree<>();
-        TreeOperationResponse last = null;
-        for (int v : values) last = tree.insert(v);
+        TreeOperationResponse last = tree.insert(first);
+        for (int v : rest) last = tree.insert(v);
         return actions(last).stream().filter(a -> a.startsWith("rotate")).toList();
     }
 
@@ -228,10 +234,10 @@ class TreeInvariantTest {
         return left + (node.isBlack() ? 1 : 0);
     }
 
-    private static void collect(TreeNodeDto node, Set<Integer> ids, List<Object> values) {
+    private static void collect(TreeNodeDto node, Set<Integer> ids, List<Integer> values) {
         if (node == null) return;
         ids.add(node.id());
-        values.add(node.value());
+        values.add((Integer) node.value());
         collect(node.left(), ids, values);
         collect(node.right(), ids, values);
     }
