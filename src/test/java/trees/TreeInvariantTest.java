@@ -3,6 +3,8 @@ package trees;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
+import steps.OperationResponse;
+import steps.Step;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -45,7 +47,7 @@ class TreeInvariantTest {
             TreeSet<Integer> expected = new TreeSet<>();
             for (int op = 0; op < 60; op++) {
                 int value = random.nextInt(40);
-                TreeOperationResponse response;
+                OperationResponse<TreeNodeDto> response;
                 if (random.nextInt(3) > 0) {
                     response = tree.insert(value);
                     expected.add(value);
@@ -94,7 +96,7 @@ class TreeInvariantTest {
     void removeLastNodeLeavesEmptyTree() {
         for (AbstractBinarySearchTree<Integer, ?> tree : allTrees()) {
             tree.insert(5);
-            List<TreeStep> steps = tree.remove(5).steps();
+            List<Step<TreeNodeDto>> steps = tree.remove(5).steps();
             assertNull(tree.getRoot());
             assertNull(steps.getLast().state());
         }
@@ -175,13 +177,13 @@ class TreeInvariantTest {
         return List.of(new SimpleBinarySearchTree<Integer>(), new AVLTree<Integer>(), new RBTree<Integer>());
     }
 
-    private static List<String> actions(TreeOperationResponse response) {
-        return response.steps().stream().map(TreeStep::action).toList();
+    private static List<String> actions(OperationResponse<TreeNodeDto> response) {
+        return response.steps().stream().map(Step::action).toList();
     }
 
     /** Returns the snapshot of the first step with the given action; fails if there is none. */
-    private static TreeNodeDto stateOf(TreeOperationResponse response, String action) {
-        TreeStep step = response.steps().stream()
+    private static TreeNodeDto stateOf(OperationResponse<TreeNodeDto> response, String action) {
+        Step<TreeNodeDto> step = response.steps().stream()
                 .filter(s -> s.action().equals(action)).findFirst().orElseThrow();
         assertNotNull(step.state());
         return step.state();
@@ -190,13 +192,13 @@ class TreeInvariantTest {
     /** Inserts all values and returns the rotations done by the last insert. */
     private static List<String> rotations(int first, int... rest) {
         AVLTree<Integer> tree = new AVLTree<>();
-        TreeOperationResponse last = tree.insert(first);
+        OperationResponse<TreeNodeDto> last = tree.insert(first);
         for (int v : rest) last = tree.insert(v);
         return actions(last).stream().filter(a -> a.startsWith("rotate")).toList();
     }
 
-    private static void checkSteps(TreeOperationResponse response) {
-        List<TreeStep> steps = response.steps();
+    private static void checkSteps(OperationResponse<TreeNodeDto> response) {
+        List<Step<TreeNodeDto>> steps = response.steps();
         assertFalse(steps.isEmpty());
         assertEquals("done", steps.getLast().action());
         for (int i = 0; i < steps.size(); i++) {

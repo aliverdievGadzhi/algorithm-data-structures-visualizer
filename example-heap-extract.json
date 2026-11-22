@@ -1,0 +1,36 @@
+{
+  "structure" : "heap",
+  "operation" : "extract_min",
+  "value" : 5,
+  "steps" : [ {
+    "index" : 0,
+    "action" : "extract",
+    "at" : 0,
+    "comment" : "Remove the minimum 5 and move the last element 9 to the root",
+    "state" : [ 9, 10, 8, 20, 15 ]
+  }, {
+    "index" : 1,
+    "action" : "sift_down",
+    "at" : 0,
+    "comment" : "Sift 9 down while a child is smaller",
+    "state" : [ 9, 10, 8, 20, 15 ]
+  }, {
+    "index" : 2,
+    "action" : "compare",
+    "at" : [ 0, 2 ],
+    "comment" : "Smaller child 8 < 9, swap them",
+    "state" : [ 9, 10, 8, 20, 15 ]
+  }, {
+    "index" : 3,
+    "action" : "swap",
+    "at" : [ 0, 2 ],
+    "comment" : "Swap 9 and 8",
+    "state" : [ 8, 10, 9, 20, 15 ]
+  }, {
+    "index" : 4,
+    "action" : "done",
+    "at" : null,
+    "comment" : "Extracted the minimum 5",
+    "state" : [ 8, 10, 9, 20, 15 ]
+  } ]
+}
