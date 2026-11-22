@@ -1,4 +1,4 @@
-package trees;
+package visualizer.trees;
 
 /**
  * An enum representing the color of a node in a red-black tree.

@@ -1,7 +1,7 @@
-package heaps;
+package visualizer.heaps;
 
-import steps.OperationResponse;
-import steps.Step;
+import visualizer.steps.OperationResponse;
+import visualizer.steps.Step;
 
 import java.util.ArrayList;
 import java.util.Collections;

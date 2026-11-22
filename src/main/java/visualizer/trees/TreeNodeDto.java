@@ -1,4 +1,4 @@
-package trees;
+package visualizer.trees;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

@@ -1,4 +1,4 @@
-package trees;
+package visualizer.trees;
 
 /** A node of an {@link AVLTree}. It caches the height of its subtree (a leaf has height 0). */
 public class AVLNode<T extends Comparable<T>> extends AbstractBinaryNode<T, AVLNode<T>> {

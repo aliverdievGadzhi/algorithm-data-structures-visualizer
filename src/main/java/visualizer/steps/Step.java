@@ -1,4 +1,4 @@
-package steps;
+package visualizer.steps;
 
 /**
  * One step of an operation, shared by all structures.

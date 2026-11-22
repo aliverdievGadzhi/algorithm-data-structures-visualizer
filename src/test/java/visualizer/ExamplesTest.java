@@ -1,7 +1,7 @@
-package org.example;
+package visualizer;
 
 import org.junit.jupiter.api.Test;
-import steps.OperationResponse;
+import visualizer.steps.OperationResponse;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,22 +13,22 @@ class ExamplesTest {
 
     @Test
     void insertExampleIsUpToDate() throws Exception {
-        assertMatches("example-insert.json", Main.insertExample());
+        assertMatches("examples/example-insert.json", Main.insertExample());
     }
 
     @Test
     void deleteExampleIsUpToDate() throws Exception {
-        assertMatches("example-delete.json", Main.deleteExample());
+        assertMatches("examples/example-delete.json", Main.deleteExample());
     }
 
     @Test
     void heapInsertExampleIsUpToDate() throws Exception {
-        assertMatches("example-heap-insert.json", Main.heapInsertExample());
+        assertMatches("examples/example-heap-insert.json", Main.heapInsertExample());
     }
 
     @Test
     void heapExtractExampleIsUpToDate() throws Exception {
-        assertMatches("example-heap-extract.json", Main.heapExtractExample());
+        assertMatches("examples/example-heap-extract.json", Main.heapExtractExample());
     }
 
     private static void assertMatches(String file, OperationResponse<?> expected) throws Exception {

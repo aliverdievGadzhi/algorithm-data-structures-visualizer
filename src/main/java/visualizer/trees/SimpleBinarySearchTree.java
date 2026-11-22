@@ -1,4 +1,4 @@
-package trees;
+package visualizer.trees;
 
 /** A plain binary search tree without balancing. */
 public class SimpleBinarySearchTree<T extends Comparable<T>> extends AbstractBinarySearchTree<T, BSTNode<T>> {

@@ -1,10 +1,10 @@
-package heaps;
+package visualizer.heaps;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import steps.OperationResponse;
-import steps.Step;
+import visualizer.steps.OperationResponse;
+import visualizer.steps.Step;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package trees;
+package visualizer.trees;
 
 /** A node of an {@link RBTree}. */
 public class RBNode<T extends Comparable<T>> extends AbstractBinaryNode<T, RBNode<T>> {

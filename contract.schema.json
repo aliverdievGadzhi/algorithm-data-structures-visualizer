@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Operation steps",
+  "description": "One recorded operation of a data structure or algorithm. Each step holds a full snapshot of the structure after its action. The last step is always 'done' (checked by the tests, JSON Schema cannot express 'last item').",
+  "type": "object",
+  "required": ["structure", "operation", "value", "steps"],
+  "additionalProperties": false,
+  "properties": {
+    "structure": { "enum": ["bst", "avl", "rb", "heap", "array"] },
+    "operation": { "type": "string", "pattern": "^[a-z_]+$" },
+    "value": { "description": "Value the operation works with: the inserted or removed key, the extracted minimum, or the input array of a sort." },
+    "steps": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/step" } }
+  },
+  "if": { "properties": { "structure": { "enum": ["heap", "array"] } } },
+  "then": { "properties": { "steps": { "items": { "properties": { "state": { "type": "array" } } } } } },
+  "else": { "properties": { "steps": { "items": { "properties": { "state": { "$ref": "#/$defs/treeOrEmpty" } } } } } },
+  "$defs": {
+    "step": {
+      "type": "object",
+      "required": ["index", "action", "at", "comment", "state"],
+      "additionalProperties": false,
+      "properties": {
+        "index": { "type": "integer", "minimum": 0 },
+        "action": { "type": "string", "pattern": "^[a-z_]+$" },
+        "at": {
+          "description": "Node id for trees; an index or a pair of indexes for arrays; null when the step is about no single element.",
+          "oneOf": [
+            { "type": "null" },
+            { "type": "integer", "minimum": 0 },
+            { "type": "array", "items": { "type": "integer", "minimum": 0 }, "minItems": 2, "maxItems": 2 }
+          ]
+        },
+        "comment": { "type": "string", "minLength": 1 },
+        "state": { "description": "Full snapshot after the action: a tree node (or null for an empty tree) or an array." }
+      }
+    },
+    "treeOrEmpty": {
+      "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/treeNode" }]
+    },
+    "treeNode": {
+      "type": "object",
+      "required": ["id", "value", "left", "right"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "integer", "minimum": 0 },
+        "value": {},
+        "height": { "type": "integer", "minimum": 0 },
+        "balance": { "type": "integer" },
+        "color": { "enum": ["RED", "BLACK"] },
+        "left": { "$ref": "#/$defs/treeOrEmpty" },
+        "right": { "$ref": "#/$defs/treeOrEmpty" }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-package trees;
+package visualizer.trees;
 
 /** A node of a {@link SimpleBinarySearchTree}. */
 public class BSTNode<T extends Comparable<T>> extends AbstractBinaryNode<T, BSTNode<T>> {

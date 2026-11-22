@@ -1,4 +1,4 @@
-package trees;
+package visualizer.trees;
 
 /**
  * A red-black tree. Rules: the root is black, a red node has no red child,

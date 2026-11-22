@@ -1,4 +1,4 @@
-package steps;
+package visualizer.steps;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

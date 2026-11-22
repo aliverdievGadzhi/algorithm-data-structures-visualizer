@@ -1,4 +1,4 @@
-package trees;
+package visualizer.trees;
 
 /**
  * A node of a binary search tree with a link to its parent.

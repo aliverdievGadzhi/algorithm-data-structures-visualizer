@@ -1,10 +1,10 @@
-package trees;
+package visualizer.trees;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import steps.OperationResponse;
-import steps.Step;
+import visualizer.steps.OperationResponse;
+import visualizer.steps.Step;
 
 import java.util.ArrayList;
 import java.util.HashSet;

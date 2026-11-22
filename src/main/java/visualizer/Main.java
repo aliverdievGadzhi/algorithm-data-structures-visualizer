@@ -1,23 +1,23 @@
-package org.example;
+package visualizer;
 
-import heaps.MinHeap;
-import steps.OperationResponse;
-import trees.AVLTree;
-import trees.TreeNodeDto;
+import visualizer.heaps.MinHeap;
+import visualizer.steps.OperationResponse;
+import visualizer.trees.AVLTree;
+import visualizer.trees.TreeNodeDto;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-/** Regenerates the example JSON files in the project root. */
+/** Regenerates the example JSON files in the examples directory. */
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Files.writeString(Path.of("example-insert.json"), insertExample().toJson());
-        Files.writeString(Path.of("example-delete.json"), deleteExample().toJson());
-        Files.writeString(Path.of("example-heap-insert.json"), heapInsertExample().toJson());
-        Files.writeString(Path.of("example-heap-extract.json"), heapExtractExample().toJson());
+        Files.writeString(Path.of("examples/example-insert.json"), insertExample().toJson());
+        Files.writeString(Path.of("examples/example-delete.json"), deleteExample().toJson());
+        Files.writeString(Path.of("examples/example-heap-insert.json"), heapInsertExample().toJson());
+        Files.writeString(Path.of("examples/example-heap-extract.json"), heapExtractExample().toJson());
         System.out.println("Wrote the example JSON files");
     }
 

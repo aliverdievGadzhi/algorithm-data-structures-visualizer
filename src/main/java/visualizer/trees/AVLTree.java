@@ -1,4 +1,4 @@
-package trees;
+package visualizer.trees;
 
 /**
  * An AVL tree: for every node the heights of the two subtrees differ by at most one.
