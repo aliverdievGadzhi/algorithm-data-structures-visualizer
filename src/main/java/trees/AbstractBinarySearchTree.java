@@ -1,5 +1,8 @@
 package trees;
 
+import steps.OperationResponse;
+import steps.Step;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -16,7 +19,7 @@ import java.util.Objects;
 public abstract class AbstractBinarySearchTree<T extends Comparable<T>, N extends AbstractBinaryNode<T, N>> {
 
     protected N root;
-    private List<TreeStep> steps = new ArrayList<>();
+    private List<Step<TreeNodeDto>> steps = new ArrayList<>();
     private int nextId;
 
     /** Name of the structure in the JSON contract, e.g. {@code "avl"}. */
@@ -60,7 +63,7 @@ public abstract class AbstractBinarySearchTree<T extends Comparable<T>, N extend
         inOrder(node.getRight(), result);
     }
 
-    public TreeOperationResponse insert(T value) {
+    public OperationResponse<TreeNodeDto> insert(T value) {
         Objects.requireNonNull(value, "value");
         steps = new ArrayList<>();
 
@@ -90,7 +93,7 @@ public abstract class AbstractBinarySearchTree<T extends Comparable<T>, N extend
         return finish("insert", value, "Insert " + value + " finished");
     }
 
-    public TreeOperationResponse remove(T value) {
+    public OperationResponse<TreeNodeDto> remove(T value) {
         Objects.requireNonNull(value, "value");
         steps = new ArrayList<>();
 
@@ -153,7 +156,7 @@ public abstract class AbstractBinarySearchTree<T extends Comparable<T>, N extend
     /** Adds a step with a snapshot of the whole tree as it is now. */
     protected void record(String action, N node, String comment) {
         Integer at = node == null ? null : node.getId();
-        steps.add(new TreeStep(steps.size(), action, at, comment, snapshot(root)));
+        steps.add(new Step<>(steps.size(), action, at, comment, snapshot(root)));
     }
 
     private void recordCompare(T value, N node, int cmp) {
@@ -161,9 +164,9 @@ public abstract class AbstractBinarySearchTree<T extends Comparable<T>, N extend
         record("compare", node, value + (left ? " < " : " > ") + node.getKey() + ", go " + side(left));
     }
 
-    private TreeOperationResponse finish(String operation, T value, String comment) {
+    private OperationResponse<TreeNodeDto> finish(String operation, T value, String comment) {
         record("done", null, comment);
-        return new TreeOperationResponse(structure(), operation, value, List.copyOf(steps));
+        return new OperationResponse<>(structure(), operation, value, List.copyOf(steps));
     }
 
     private TreeNodeDto snapshot(N node) {

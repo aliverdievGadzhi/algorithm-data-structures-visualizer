@@ -1,0 +1,48 @@
+{
+  "structure" : "heap",
+  "operation" : "insert",
+  "value" : 3,
+  "steps" : [ {
+    "index" : 0,
+    "action" : "insert",
+    "at" : 6,
+    "comment" : "Append 3 at index 6",
+    "state" : [ 5, 10, 8, 20, 15, 9, 3 ]
+  }, {
+    "index" : 1,
+    "action" : "sift_up",
+    "at" : 6,
+    "comment" : "Sift 3 up while it is smaller than its parent",
+    "state" : [ 5, 10, 8, 20, 15, 9, 3 ]
+  }, {
+    "index" : 2,
+    "action" : "compare",
+    "at" : [ 6, 2 ],
+    "comment" : "3 < 8 (its parent), swap them",
+    "state" : [ 5, 10, 8, 20, 15, 9, 3 ]
+  }, {
+    "index" : 3,
+    "action" : "swap",
+    "at" : [ 6, 2 ],
+    "comment" : "Swap 3 and 8",
+    "state" : [ 5, 10, 3, 20, 15, 9, 8 ]
+  }, {
+    "index" : 4,
+    "action" : "compare",
+    "at" : [ 2, 0 ],
+    "comment" : "3 < 5 (its parent), swap them",
+    "state" : [ 5, 10, 3, 20, 15, 9, 8 ]
+  }, {
+    "index" : 5,
+    "action" : "swap",
+    "at" : [ 2, 0 ],
+    "comment" : "Swap 3 and 5",
+    "state" : [ 3, 10, 5, 20, 15, 9, 8 ]
+  }, {
+    "index" : 6,
+    "action" : "done",
+    "at" : null,
+    "comment" : "Insert 3 finished",
+    "state" : [ 3, 10, 5, 20, 15, 9, 8 ]
+  } ]
+}

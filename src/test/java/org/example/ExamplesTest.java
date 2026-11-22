@@ -1,7 +1,7 @@
 package org.example;
 
-import trees.TreeOperationResponse;
 import org.junit.jupiter.api.Test;
+import steps.OperationResponse;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,7 +21,17 @@ class ExamplesTest {
         assertMatches("example-delete.json", Main.deleteExample());
     }
 
-    private static void assertMatches(String file, TreeOperationResponse expected) throws Exception {
+    @Test
+    void heapInsertExampleIsUpToDate() throws Exception {
+        assertMatches("example-heap-insert.json", Main.heapInsertExample());
+    }
+
+    @Test
+    void heapExtractExampleIsUpToDate() throws Exception {
+        assertMatches("example-heap-extract.json", Main.heapExtractExample());
+    }
+
+    private static void assertMatches(String file, OperationResponse<?> expected) throws Exception {
         String actual = Files.readString(Path.of(file));
         assertEquals(normalize(expected.toJson()), normalize(actual), file + " is outdated, run Main");
     }
