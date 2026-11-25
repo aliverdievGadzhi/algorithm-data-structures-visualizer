@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Algorithm Visualizer</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Classic scripts: they also run on file://, where the page shows how to start a server -->
+  <script defer src="contract.js"></script>
+  <script defer src="tree-view.js"></script>
+  <script defer src="array-view.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Algorithm Visualizer</h1>
+    <div class="sources">
+      <label for="scenario">Scenario</label>
+      <select id="scenario"></select>
+    </div>
+  </header>
+
+  <p id="message" role="alert" hidden></p>
+
+  <main>
+    <section class="workspace" aria-label="Visualization">
+      <div id="stage" tabindex="0" aria-label="Drawing area">
+        <p class="placeholder">No scenario loaded.</p>
+      </div>
+      <ul class="legend" aria-label="Color legend">
+        <li data-kind="inspect">Compare / look</li>
+        <li data-kind="move">Swap / rotate / recolor</li>
+        <li data-kind="write">Insert / overwrite</li>
+        <li data-kind="alert">Delete / violation</li>
+        <li data-kind="done">Done</li>
+      </ul>
+      <div class="player">
+        <input id="progress" type="range" min="0" max="0" value="0" aria-label="Step" disabled>
+        <div class="controls">
+          <button id="first" type="button" disabled>First</button>
+          <button id="prev" type="button" disabled>Prev</button>
+          <button id="play" type="button" class="primary" disabled>Play</button>
+          <button id="next" type="button" disabled>Next</button>
+          <button id="last" type="button" disabled>Last</button>
+          <label class="speed">Speed
+            <input id="speed" type="range" min="0.5" max="3" step="0.25" value="1">
+            <output id="speed-value" for="speed">1x</output>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <aside aria-label="Step details">
+      <p id="counter">Step - / -</p>
+      <p id="action" data-kind="none">-</p>
+      <p id="comment" aria-live="polite"></p>
+      <dl>
+        <dt>At</dt><dd id="at">-</dd>
+        <dt>Structure</dt><dd id="structure">-</dd>
+        <dt>Operation</dt><dd id="operation">-</dd>
+        <dt>Value</dt><dd id="value">-</dd>
+        <dt>Source</dt><dd id="source">-</dd>
+      </dl>
+      <p class="keys"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> step &nbsp; <kbd>Space</kbd> play &nbsp; <kbd>Home</kbd> <kbd>End</kbd> jump</p>
+    </aside>
+  </main>
+</body>
+</html>

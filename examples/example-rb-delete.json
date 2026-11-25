@@ -1,0 +1,498 @@
+{
+  "structure" : "rb",
+  "operation" : "delete",
+  "value" : 50,
+  "steps" : [ {
+    "index" : 0,
+    "action" : "found",
+    "at" : 2,
+    "comment" : "Found 50",
+    "state" : {
+      "id" : 2,
+      "value" : 50,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 3,
+        "value" : 20,
+        "color" : "RED",
+        "left" : {
+          "id" : 4,
+          "value" : 10,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 1,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : {
+            "id" : 5,
+            "value" : 40,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        }
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 60,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      }
+    }
+  }, {
+    "index" : 1,
+    "action" : "find_replacement",
+    "at" : 0,
+    "comment" : "50 has two children, so take its in-order successor 60 (the minimum of the right subtree)",
+    "state" : {
+      "id" : 2,
+      "value" : 50,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 3,
+        "value" : 20,
+        "color" : "RED",
+        "left" : {
+          "id" : 4,
+          "value" : 10,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 1,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : {
+            "id" : 5,
+            "value" : 40,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        }
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 60,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      }
+    }
+  }, {
+    "index" : 2,
+    "action" : "replace",
+    "at" : 2,
+    "comment" : "Copy 60 into the node, then remove the old 60 node",
+    "state" : {
+      "id" : 2,
+      "value" : 60,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 3,
+        "value" : 20,
+        "color" : "RED",
+        "left" : {
+          "id" : 4,
+          "value" : 10,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 1,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : {
+            "id" : 5,
+            "value" : 40,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        }
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 60,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      }
+    }
+  }, {
+    "index" : 3,
+    "action" : "double_black",
+    "at" : 0,
+    "comment" : "60 is double black: its path is missing one black node",
+    "state" : {
+      "id" : 2,
+      "value" : 60,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 3,
+        "value" : 20,
+        "color" : "RED",
+        "left" : {
+          "id" : 4,
+          "value" : 10,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 1,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : {
+            "id" : 5,
+            "value" : 40,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        }
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 60,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      }
+    }
+  }, {
+    "index" : 4,
+    "action" : "recolor",
+    "at" : 3,
+    "comment" : "Sibling 20 is red: swap colors with parent 60 and rotate it up",
+    "state" : {
+      "id" : 2,
+      "value" : 60,
+      "color" : "RED",
+      "left" : {
+        "id" : 3,
+        "value" : 20,
+        "color" : "BLACK",
+        "left" : {
+          "id" : 4,
+          "value" : 10,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 1,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : {
+            "id" : 5,
+            "value" : 40,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        }
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 60,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      }
+    }
+  }, {
+    "index" : 5,
+    "action" : "rotate_right",
+    "at" : 2,
+    "comment" : "Rotate right around 60, 20 moves up",
+    "state" : {
+      "id" : 3,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 4,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 60,
+        "color" : "RED",
+        "left" : {
+          "id" : 1,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : {
+            "id" : 5,
+            "value" : 40,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 0,
+          "value" : 60,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 6,
+    "action" : "double_black",
+    "at" : 0,
+    "comment" : "60 is double black: its path is missing one black node",
+    "state" : {
+      "id" : 3,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 4,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 60,
+        "color" : "RED",
+        "left" : {
+          "id" : 1,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : {
+            "id" : 5,
+            "value" : 40,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 0,
+          "value" : 60,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 7,
+    "action" : "rotate_left",
+    "at" : 1,
+    "comment" : "Rotate left around 30, 40 moves up",
+    "state" : {
+      "id" : 3,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 4,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 60,
+        "color" : "RED",
+        "left" : {
+          "id" : 5,
+          "value" : 40,
+          "color" : "RED",
+          "left" : {
+            "id" : 1,
+            "value" : 30,
+            "color" : "BLACK",
+            "left" : null,
+            "right" : null
+          },
+          "right" : null
+        },
+        "right" : {
+          "id" : 0,
+          "value" : 60,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 8,
+    "action" : "rotate_right",
+    "at" : 2,
+    "comment" : "Rotate right around 60, 40 moves up",
+    "state" : {
+      "id" : 3,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 4,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 5,
+        "value" : 40,
+        "color" : "RED",
+        "left" : {
+          "id" : 1,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 2,
+          "value" : 60,
+          "color" : "RED",
+          "left" : null,
+          "right" : {
+            "id" : 0,
+            "value" : 60,
+            "color" : "BLACK",
+            "left" : null,
+            "right" : null
+          }
+        }
+      }
+    }
+  }, {
+    "index" : 9,
+    "action" : "recolor",
+    "at" : 2,
+    "comment" : "Sibling had a red child: after the rotations 60 becomes black and the double black is gone",
+    "state" : {
+      "id" : 3,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 4,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 5,
+        "value" : 40,
+        "color" : "RED",
+        "left" : {
+          "id" : 1,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 2,
+          "value" : 60,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : {
+            "id" : 0,
+            "value" : 60,
+            "color" : "BLACK",
+            "left" : null,
+            "right" : null
+          }
+        }
+      }
+    }
+  }, {
+    "index" : 10,
+    "action" : "delete",
+    "at" : 0,
+    "comment" : "Remove leaf 60",
+    "state" : {
+      "id" : 3,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 4,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 5,
+        "value" : 40,
+        "color" : "RED",
+        "left" : {
+          "id" : 1,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 2,
+          "value" : 60,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 11,
+    "action" : "done",
+    "at" : null,
+    "comment" : "Delete 50 finished",
+    "state" : {
+      "id" : 3,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 4,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 5,
+        "value" : 40,
+        "color" : "RED",
+        "left" : {
+          "id" : 1,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 2,
+          "value" : 60,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  } ]
+}

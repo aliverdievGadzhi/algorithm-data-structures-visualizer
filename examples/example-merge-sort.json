@@ -1,0 +1,337 @@
+{
+  "structure": "array",
+  "operation": "merge_sort",
+  "value": [
+    5,
+    2,
+    8,
+    1,
+    9,
+    3
+  ],
+  "steps": [
+    {
+      "index": 0,
+      "action": "merge",
+      "at": [
+        1,
+        2
+      ],
+      "comment": "Merge [2] and [8]",
+      "state": [
+        5,
+        2,
+        8,
+        1,
+        9,
+        3
+      ]
+    },
+    {
+      "index": 1,
+      "action": "overwrite",
+      "at": 1,
+      "comment": "Write 2 from the left half to index 1 (2 <= 8)",
+      "state": [
+        5,
+        2,
+        8,
+        1,
+        9,
+        3
+      ]
+    },
+    {
+      "index": 2,
+      "action": "overwrite",
+      "at": 2,
+      "comment": "Write 8 from the right half to index 2 (left half is used up)",
+      "state": [
+        5,
+        2,
+        8,
+        1,
+        9,
+        3
+      ]
+    },
+    {
+      "index": 3,
+      "action": "merge",
+      "at": [
+        0,
+        2
+      ],
+      "comment": "Merge [5] and [2, 8]",
+      "state": [
+        5,
+        2,
+        8,
+        1,
+        9,
+        3
+      ]
+    },
+    {
+      "index": 4,
+      "action": "overwrite",
+      "at": 0,
+      "comment": "Write 2 from the right half to index 0 (2 < 5)",
+      "state": [
+        2,
+        2,
+        8,
+        1,
+        9,
+        3
+      ]
+    },
+    {
+      "index": 5,
+      "action": "overwrite",
+      "at": 1,
+      "comment": "Write 5 from the left half to index 1 (5 <= 8)",
+      "state": [
+        2,
+        5,
+        8,
+        1,
+        9,
+        3
+      ]
+    },
+    {
+      "index": 6,
+      "action": "overwrite",
+      "at": 2,
+      "comment": "Write 8 from the right half to index 2 (left half is used up)",
+      "state": [
+        2,
+        5,
+        8,
+        1,
+        9,
+        3
+      ]
+    },
+    {
+      "index": 7,
+      "action": "merge",
+      "at": [
+        4,
+        5
+      ],
+      "comment": "Merge [9] and [3]",
+      "state": [
+        2,
+        5,
+        8,
+        1,
+        9,
+        3
+      ]
+    },
+    {
+      "index": 8,
+      "action": "overwrite",
+      "at": 4,
+      "comment": "Write 3 from the right half to index 4 (3 < 9)",
+      "state": [
+        2,
+        5,
+        8,
+        1,
+        3,
+        3
+      ]
+    },
+    {
+      "index": 9,
+      "action": "overwrite",
+      "at": 5,
+      "comment": "Write 9 from the left half to index 5 (right half is used up)",
+      "state": [
+        2,
+        5,
+        8,
+        1,
+        3,
+        9
+      ]
+    },
+    {
+      "index": 10,
+      "action": "merge",
+      "at": [
+        3,
+        5
+      ],
+      "comment": "Merge [1] and [3, 9]",
+      "state": [
+        2,
+        5,
+        8,
+        1,
+        3,
+        9
+      ]
+    },
+    {
+      "index": 11,
+      "action": "overwrite",
+      "at": 3,
+      "comment": "Write 1 from the left half to index 3 (1 <= 3)",
+      "state": [
+        2,
+        5,
+        8,
+        1,
+        3,
+        9
+      ]
+    },
+    {
+      "index": 12,
+      "action": "overwrite",
+      "at": 4,
+      "comment": "Write 3 from the right half to index 4 (left half is used up)",
+      "state": [
+        2,
+        5,
+        8,
+        1,
+        3,
+        9
+      ]
+    },
+    {
+      "index": 13,
+      "action": "overwrite",
+      "at": 5,
+      "comment": "Write 9 from the right half to index 5 (left half is used up)",
+      "state": [
+        2,
+        5,
+        8,
+        1,
+        3,
+        9
+      ]
+    },
+    {
+      "index": 14,
+      "action": "merge",
+      "at": [
+        0,
+        5
+      ],
+      "comment": "Merge [2, 5, 8] and [1, 3, 9]",
+      "state": [
+        2,
+        5,
+        8,
+        1,
+        3,
+        9
+      ]
+    },
+    {
+      "index": 15,
+      "action": "overwrite",
+      "at": 0,
+      "comment": "Write 1 from the right half to index 0 (1 < 2)",
+      "state": [
+        1,
+        5,
+        8,
+        1,
+        3,
+        9
+      ]
+    },
+    {
+      "index": 16,
+      "action": "overwrite",
+      "at": 1,
+      "comment": "Write 2 from the left half to index 1 (2 <= 3)",
+      "state": [
+        1,
+        2,
+        8,
+        1,
+        3,
+        9
+      ]
+    },
+    {
+      "index": 17,
+      "action": "overwrite",
+      "at": 2,
+      "comment": "Write 3 from the right half to index 2 (3 < 5)",
+      "state": [
+        1,
+        2,
+        3,
+        1,
+        3,
+        9
+      ]
+    },
+    {
+      "index": 18,
+      "action": "overwrite",
+      "at": 3,
+      "comment": "Write 5 from the left half to index 3 (5 <= 9)",
+      "state": [
+        1,
+        2,
+        3,
+        5,
+        3,
+        9
+      ]
+    },
+    {
+      "index": 19,
+      "action": "overwrite",
+      "at": 4,
+      "comment": "Write 8 from the left half to index 4 (8 <= 9)",
+      "state": [
+        1,
+        2,
+        3,
+        5,
+        8,
+        9
+      ]
+    },
+    {
+      "index": 20,
+      "action": "overwrite",
+      "at": 5,
+      "comment": "Write 9 from the right half to index 5 (left half is used up)",
+      "state": [
+        1,
+        2,
+        3,
+        5,
+        8,
+        9
+      ]
+    },
+    {
+      "index": 21,
+      "action": "done",
+      "at": null,
+      "comment": "The array is sorted",
+      "state": [
+        1,
+        2,
+        3,
+        5,
+        8,
+        9
+      ]
+    }
+  ]
+}
