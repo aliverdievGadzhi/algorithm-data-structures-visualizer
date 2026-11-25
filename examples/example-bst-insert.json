@@ -1,0 +1,196 @@
+{
+  "structure" : "bst",
+  "operation" : "insert",
+  "value" : 45,
+  "steps" : [ {
+    "index" : 0,
+    "action" : "compare",
+    "at" : 0,
+    "comment" : "45 < 50, go left",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "left" : {
+          "id" : 3,
+          "value" : 20,
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 40,
+          "left" : null,
+          "right" : null
+        }
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "left" : {
+          "id" : 5,
+          "value" : 60,
+          "left" : null,
+          "right" : null
+        },
+        "right" : null
+      }
+    }
+  }, {
+    "index" : 1,
+    "action" : "compare",
+    "at" : 1,
+    "comment" : "45 > 30, go right",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "left" : {
+          "id" : 3,
+          "value" : 20,
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 40,
+          "left" : null,
+          "right" : null
+        }
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "left" : {
+          "id" : 5,
+          "value" : 60,
+          "left" : null,
+          "right" : null
+        },
+        "right" : null
+      }
+    }
+  }, {
+    "index" : 2,
+    "action" : "compare",
+    "at" : 4,
+    "comment" : "45 > 40, go right",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "left" : {
+          "id" : 3,
+          "value" : 20,
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 40,
+          "left" : null,
+          "right" : null
+        }
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "left" : {
+          "id" : 5,
+          "value" : 60,
+          "left" : null,
+          "right" : null
+        },
+        "right" : null
+      }
+    }
+  }, {
+    "index" : 3,
+    "action" : "insert",
+    "at" : 6,
+    "comment" : "Insert 45 as the right child of 40",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "left" : {
+          "id" : 3,
+          "value" : 20,
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 40,
+          "left" : null,
+          "right" : {
+            "id" : 6,
+            "value" : 45,
+            "left" : null,
+            "right" : null
+          }
+        }
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "left" : {
+          "id" : 5,
+          "value" : 60,
+          "left" : null,
+          "right" : null
+        },
+        "right" : null
+      }
+    }
+  }, {
+    "index" : 4,
+    "action" : "done",
+    "at" : null,
+    "comment" : "Insert 45 finished",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "left" : {
+          "id" : 3,
+          "value" : 20,
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 40,
+          "left" : null,
+          "right" : {
+            "id" : 6,
+            "value" : 45,
+            "left" : null,
+            "right" : null
+          }
+        }
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "left" : {
+          "id" : 5,
+          "value" : 60,
+          "left" : null,
+          "right" : null
+        },
+        "right" : null
+      }
+    }
+  } ]
+}

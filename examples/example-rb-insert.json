@@ -1,0 +1,522 @@
+{
+  "structure" : "rb",
+  "operation" : "insert",
+  "value" : 60,
+  "steps" : [ {
+    "index" : 0,
+    "action" : "compare",
+    "at" : 1,
+    "comment" : "60 > 20, go right",
+    "state" : {
+      "id" : 1,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 2,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 70,
+        "color" : "RED",
+        "left" : {
+          "id" : 5,
+          "value" : 40,
+          "color" : "BLACK",
+          "left" : {
+            "id" : 6,
+            "value" : 30,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          },
+          "right" : {
+            "id" : 3,
+            "value" : 50,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 1,
+    "action" : "compare",
+    "at" : 0,
+    "comment" : "60 < 70, go left",
+    "state" : {
+      "id" : 1,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 2,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 70,
+        "color" : "RED",
+        "left" : {
+          "id" : 5,
+          "value" : 40,
+          "color" : "BLACK",
+          "left" : {
+            "id" : 6,
+            "value" : 30,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          },
+          "right" : {
+            "id" : 3,
+            "value" : 50,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 2,
+    "action" : "compare",
+    "at" : 5,
+    "comment" : "60 > 40, go right",
+    "state" : {
+      "id" : 1,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 2,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 70,
+        "color" : "RED",
+        "left" : {
+          "id" : 5,
+          "value" : 40,
+          "color" : "BLACK",
+          "left" : {
+            "id" : 6,
+            "value" : 30,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          },
+          "right" : {
+            "id" : 3,
+            "value" : 50,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 3,
+    "action" : "compare",
+    "at" : 3,
+    "comment" : "60 > 50, go right",
+    "state" : {
+      "id" : 1,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 2,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 70,
+        "color" : "RED",
+        "left" : {
+          "id" : 5,
+          "value" : 40,
+          "color" : "BLACK",
+          "left" : {
+            "id" : 6,
+            "value" : 30,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          },
+          "right" : {
+            "id" : 3,
+            "value" : 50,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 4,
+    "action" : "insert",
+    "at" : 7,
+    "comment" : "Insert 60 as the right child of 50",
+    "state" : {
+      "id" : 1,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 2,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 70,
+        "color" : "RED",
+        "left" : {
+          "id" : 5,
+          "value" : 40,
+          "color" : "BLACK",
+          "left" : {
+            "id" : 6,
+            "value" : 30,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          },
+          "right" : {
+            "id" : 3,
+            "value" : 50,
+            "color" : "RED",
+            "left" : null,
+            "right" : {
+              "id" : 7,
+              "value" : 60,
+              "color" : "RED",
+              "left" : null,
+              "right" : null
+            }
+          }
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 5,
+    "action" : "recolor",
+    "at" : 5,
+    "comment" : "Parent 50 and uncle 30 are red: make them black and grandparent 40 red",
+    "state" : {
+      "id" : 1,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 2,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 70,
+        "color" : "RED",
+        "left" : {
+          "id" : 5,
+          "value" : 40,
+          "color" : "RED",
+          "left" : {
+            "id" : 6,
+            "value" : 30,
+            "color" : "BLACK",
+            "left" : null,
+            "right" : null
+          },
+          "right" : {
+            "id" : 3,
+            "value" : 50,
+            "color" : "BLACK",
+            "left" : null,
+            "right" : {
+              "id" : 7,
+              "value" : 60,
+              "color" : "RED",
+              "left" : null,
+              "right" : null
+            }
+          }
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 6,
+    "action" : "rotate_right",
+    "at" : 0,
+    "comment" : "Rotate right around 70, 40 moves up",
+    "state" : {
+      "id" : 1,
+      "value" : 20,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 2,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 5,
+        "value" : 40,
+        "color" : "RED",
+        "left" : {
+          "id" : 6,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 0,
+          "value" : 70,
+          "color" : "RED",
+          "left" : {
+            "id" : 3,
+            "value" : 50,
+            "color" : "BLACK",
+            "left" : null,
+            "right" : {
+              "id" : 7,
+              "value" : 60,
+              "color" : "RED",
+              "left" : null,
+              "right" : null
+            }
+          },
+          "right" : {
+            "id" : 4,
+            "value" : 80,
+            "color" : "BLACK",
+            "left" : null,
+            "right" : null
+          }
+        }
+      }
+    }
+  }, {
+    "index" : 7,
+    "action" : "recolor",
+    "at" : 5,
+    "comment" : "Uncle is black: make 40 black and grandparent 20 red, then rotate",
+    "state" : {
+      "id" : 1,
+      "value" : 20,
+      "color" : "RED",
+      "left" : {
+        "id" : 2,
+        "value" : 10,
+        "color" : "BLACK",
+        "left" : null,
+        "right" : null
+      },
+      "right" : {
+        "id" : 5,
+        "value" : 40,
+        "color" : "BLACK",
+        "left" : {
+          "id" : 6,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 0,
+          "value" : 70,
+          "color" : "RED",
+          "left" : {
+            "id" : 3,
+            "value" : 50,
+            "color" : "BLACK",
+            "left" : null,
+            "right" : {
+              "id" : 7,
+              "value" : 60,
+              "color" : "RED",
+              "left" : null,
+              "right" : null
+            }
+          },
+          "right" : {
+            "id" : 4,
+            "value" : 80,
+            "color" : "BLACK",
+            "left" : null,
+            "right" : null
+          }
+        }
+      }
+    }
+  }, {
+    "index" : 8,
+    "action" : "rotate_left",
+    "at" : 1,
+    "comment" : "Rotate left around 20, 40 moves up",
+    "state" : {
+      "id" : 5,
+      "value" : 40,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 1,
+        "value" : 20,
+        "color" : "RED",
+        "left" : {
+          "id" : 2,
+          "value" : 10,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 6,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 70,
+        "color" : "RED",
+        "left" : {
+          "id" : 3,
+          "value" : 50,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : {
+            "id" : 7,
+            "value" : 60,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 9,
+    "action" : "done",
+    "at" : null,
+    "comment" : "Insert 60 finished",
+    "state" : {
+      "id" : 5,
+      "value" : 40,
+      "color" : "BLACK",
+      "left" : {
+        "id" : 1,
+        "value" : 20,
+        "color" : "RED",
+        "left" : {
+          "id" : 2,
+          "value" : 10,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 6,
+          "value" : 30,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      },
+      "right" : {
+        "id" : 0,
+        "value" : 70,
+        "color" : "RED",
+        "left" : {
+          "id" : 3,
+          "value" : 50,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : {
+            "id" : 7,
+            "value" : 60,
+            "color" : "RED",
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 4,
+          "value" : 80,
+          "color" : "BLACK",
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  } ]
+}

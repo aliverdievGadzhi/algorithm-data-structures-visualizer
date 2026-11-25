@@ -1,0 +1,201 @@
+{
+  "structure" : "bst",
+  "operation" : "delete",
+  "value" : 50,
+  "steps" : [ {
+    "index" : 0,
+    "action" : "found",
+    "at" : 0,
+    "comment" : "Found 50",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "left" : {
+          "id" : 3,
+          "value" : 20,
+          "left" : null,
+          "right" : null
+        },
+        "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "left" : {
+          "id" : 4,
+          "value" : 60,
+          "left" : null,
+          "right" : {
+            "id" : 6,
+            "value" : 65,
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 5,
+          "value" : 80,
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 1,
+    "action" : "find_replacement",
+    "at" : 4,
+    "comment" : "50 has two children, so take its in-order successor 60 (the minimum of the right subtree)",
+    "state" : {
+      "id" : 0,
+      "value" : 50,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "left" : {
+          "id" : 3,
+          "value" : 20,
+          "left" : null,
+          "right" : null
+        },
+        "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "left" : {
+          "id" : 4,
+          "value" : 60,
+          "left" : null,
+          "right" : {
+            "id" : 6,
+            "value" : 65,
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 5,
+          "value" : 80,
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 2,
+    "action" : "replace",
+    "at" : 0,
+    "comment" : "Copy 60 into the node, then remove the old 60 node",
+    "state" : {
+      "id" : 0,
+      "value" : 60,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "left" : {
+          "id" : 3,
+          "value" : 20,
+          "left" : null,
+          "right" : null
+        },
+        "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "left" : {
+          "id" : 4,
+          "value" : 60,
+          "left" : null,
+          "right" : {
+            "id" : 6,
+            "value" : 65,
+            "left" : null,
+            "right" : null
+          }
+        },
+        "right" : {
+          "id" : 5,
+          "value" : 80,
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 3,
+    "action" : "delete",
+    "at" : 4,
+    "comment" : "Replace 60 with its only child 65",
+    "state" : {
+      "id" : 0,
+      "value" : 60,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "left" : {
+          "id" : 3,
+          "value" : 20,
+          "left" : null,
+          "right" : null
+        },
+        "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "left" : {
+          "id" : 6,
+          "value" : 65,
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 5,
+          "value" : 80,
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  }, {
+    "index" : 4,
+    "action" : "done",
+    "at" : null,
+    "comment" : "Delete 50 finished",
+    "state" : {
+      "id" : 0,
+      "value" : 60,
+      "left" : {
+        "id" : 1,
+        "value" : 30,
+        "left" : {
+          "id" : 3,
+          "value" : 20,
+          "left" : null,
+          "right" : null
+        },
+        "right" : null
+      },
+      "right" : {
+        "id" : 2,
+        "value" : 70,
+        "left" : {
+          "id" : 6,
+          "value" : 65,
+          "left" : null,
+          "right" : null
+        },
+        "right" : {
+          "id" : 5,
+          "value" : 80,
+          "left" : null,
+          "right" : null
+        }
+      }
+    }
+  } ]
+}

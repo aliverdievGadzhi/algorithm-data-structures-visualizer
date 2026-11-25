@@ -22,6 +22,26 @@ class ExamplesTest {
     }
 
     @Test
+    void bstInsertExampleIsUpToDate() throws Exception {
+        assertMatches("examples/example-bst-insert.json", Main.bstInsertExample());
+    }
+
+    @Test
+    void bstDeleteExampleIsUpToDate() throws Exception {
+        assertMatches("examples/example-bst-delete.json", Main.bstDeleteExample());
+    }
+
+    @Test
+    void rbInsertExampleIsUpToDate() throws Exception {
+        assertMatches("examples/example-rb-insert.json", Main.rbInsertExample());
+    }
+
+    @Test
+    void rbDeleteExampleIsUpToDate() throws Exception {
+        assertMatches("examples/example-rb-delete.json", Main.rbDeleteExample());
+    }
+
+    @Test
     void heapInsertExampleIsUpToDate() throws Exception {
         assertMatches("examples/example-heap-insert.json", Main.heapInsertExample());
     }

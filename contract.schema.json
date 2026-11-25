@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Operation steps",
-  "description": "One recorded operation of a data structure or algorithm. Each step holds a full snapshot of the structure after its action. The last step is always 'done' (checked by the tests, JSON Schema cannot express 'last item').",
+  "description": "One recorded operation of a data structure or algorithm. Each step holds a full snapshot of the structure after its action. Three more rules hold that JSON Schema cannot express: step indexes are 0, 1, 2, ...; the last action is 'done'; node ids are unique within one state.",
   "type": "object",
   "required": ["structure", "operation", "value", "steps"],
   "additionalProperties": false,
