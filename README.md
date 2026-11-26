@@ -66,8 +66,6 @@ red-black color rules and black height, and the heap order.
 
 | Algorithm | Best | Average | Worst | Stable |
 |-----------|------|---------|-------|--------|
-| Bubble sort, stops early when sorted | O(n) | O(n²) | O(n²) | yes |
-| Insertion sort | O(n) | O(n²) | O(n²) | yes |
 | Quick sort, Lomuto partition with the last element as pivot | O(n log n) | O(n log n) | O(n²) | no |
 | Merge sort, top-down | O(n log n) | O(n log n) | O(n log n) | yes |
 
